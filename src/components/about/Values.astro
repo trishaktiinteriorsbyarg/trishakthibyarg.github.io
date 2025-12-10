@@ -1,0 +1,59 @@
+---
+const values = [
+  [
+    {
+      ref: '01',
+      name: 'Creativity',
+      description:
+        'We push boundaries to create unique, inspiring spaces that tell your story. Every project is a canvas for innovation and artistic expression.',
+    },
+    {
+      ref: '02',
+      name: 'Integrity',
+      description:
+        'We believe in transparent pricing, honest communication, and delivering on our promises. Trust is the foundation of our client relationships.',
+    },
+  ],
+  [
+    {
+      ref: '03',
+      name: 'Client-Centric',
+      description:
+        'Your vision is our blueprint. We listen, adapt, and tailor our designs to ensure they perfectly align with your lifestyle and needs.',
+    },
+    {
+      ref: '04',
+      name: 'Quality',
+      description:
+        'Uncompromised standards in materials and craftsmanship. We partner with the best artisans and vendors to ensure lasting beauty and durability.',
+    },
+  ],
+];
+---
+
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-8 lg:gap-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Our Values</h2>
+      <div class="grid gap-8 lg:grid-cols-2">
+        {
+          values.map((column, index) => (
+            <div class:list={['space-y-8', index === 1 && 'lg:mt-16']}>
+              {column.map((value) => (
+                <div class="bg-primary-500/10 dark:bg-primary-400/10 flex flex-col gap-12 rounded-3xl px-6 py-8">
+                  <p class="text-sm">{value.ref}</p>
+                  <div class="flex flex-col gap-4">
+                    <h3 class="text-xl font-medium">{value.name}</h3>
+                    <p class="text-primary-950/70 dark:text-primary-200/70 text-base sm:text-lg">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

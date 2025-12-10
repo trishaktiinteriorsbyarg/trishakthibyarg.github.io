@@ -1,0 +1,131 @@
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    
+    <!-- Page Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">Get in Touch</h2>
+      <p class="text-primary-950/70 dark:text-primary-200/70 mt-4 text-lg">
+        We'd love to hear from you.
+      </p>
+    </div>
+
+    <!-- WhatsApp Card -->
+    <div class="bg-primary-100 dark:bg-primary-900 rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center gap-6">
+      <div class="flex-shrink-0 w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </div>
+      <div class="flex-1 text-center sm:text-left">
+        <h3 class="text-lg font-medium mb-1">Quick Response via WhatsApp</h3>
+        <p class="text-primary-950/70 dark:text-primary-200/70 text-sm mb-3">Fastest way to reach us for quotes.</p>
+        <a 
+          href="https://wa.me/916300803902?text=Hi%2C%20I%27m%20interested%20in%20interior%20design%20services."
+          target="_blank"
+          class="inline-flex items-center gap-2 text-[#25D366] font-medium hover:underline"
+        >
+          Chat Now →
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 mb-10">
+      <div class="flex-1 h-px bg-primary-200 dark:bg-primary-800"></div>
+      <span class="text-primary-500 text-sm">or send a message</span>
+      <div class="flex-1 h-px bg-primary-200 dark:bg-primary-800"></div>
+    </div>
+
+    <!-- Contact Form -->
+    <form id="contact-form" class="flex flex-col gap-5">
+      <div>
+        <label for="full-name" class="block text-sm font-medium mb-2">Name</label>
+        <input
+          type="text"
+          name="full-name"
+          id="full-name"
+          autocomplete="name"
+          class="bg-primary-50 dark:bg-primary-950 ring-1 ring-primary-200 dark:ring-primary-800 focus:ring-brand block w-full rounded-lg px-4 py-3 text-base transition focus:outline-none focus:ring-2"
+          placeholder="Your name"
+          required
+        />
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          autocomplete="email"
+          class="bg-primary-50 dark:bg-primary-950 ring-1 ring-primary-200 dark:ring-primary-800 focus:ring-brand block w-full rounded-lg px-4 py-3 text-base transition focus:outline-none focus:ring-2"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          class="bg-primary-50 dark:bg-primary-950 ring-1 ring-primary-200 dark:ring-primary-800 focus:ring-brand block w-full rounded-lg px-4 py-3 text-base transition focus:outline-none focus:ring-2"
+          placeholder="e.g. Interior Design Enquiry"
+          required
+        />
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          rows="4"
+          class="bg-primary-50 dark:bg-primary-950 ring-1 ring-primary-200 dark:ring-primary-800 focus:ring-brand block w-full rounded-lg px-4 py-3 text-base transition focus:outline-none focus:ring-2"
+          placeholder="Tell us about your project..."
+          required></textarea>
+      </div>
+      <div>
+        <button
+          class="bg-brand hover:bg-opacity-90 w-full sm:w-auto rounded-lg px-8 py-3 text-base font-medium text-white transition"
+          type="submit"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
+
+    <!-- Contact Details - Inline -->
+    <div class="mt-12 pt-10 border-t border-primary-200 dark:border-primary-800 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-primary-950/70 dark:text-primary-200/70">
+      <span class="inline-flex items-center gap-2">
+        <svg class="w-4 h-4 text-brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 23.7279L5.63604 17.364C2.12132 13.8492 2.12132 8.15076 5.63604 4.63604C9.15076 1.12132 14.8492 1.12132 18.364 4.63604C21.8787 8.15076 21.8787 13.8492 18.364 17.364L12 23.7279ZM16.9497 15.9497C19.6834 13.2161 19.6834 8.78392 16.9497 6.05025C14.2161 3.31658 9.78392 3.31658 7.05025 6.05025C4.31658 8.78392 4.31658 13.2161 7.05025 15.9497L12 20.8995L16.9497 15.9497ZM12 13C10.8954 13 10 12.1046 10 11C10 9.89543 10.8954 9 12 9C13.1046 9 14 9.89543 14 11C14 12.1046 13.1046 13 12 13Z"></path></svg>
+        Hyderabad, India
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg class="w-4 h-4 text-brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9.36556 10.6821C10.302 12.3288 11.6712 13.698 13.3179 14.6344L14.2024 13.3961C14.4965 12.9845 15.0516 12.8573 15.4956 13.0998C16.9024 13.8683 18.4571 14.3353 20.0789 14.4637C20.599 14.5049 21 14.9389 21 15.4606V19.9234C21 20.4361 20.6122 20.8657 20.1022 20.9181C19.5723 20.9726 19.0377 21 18.5 21C9.93959 21 3 14.0604 3 5.5C3 4.96227 3.02742 4.42771 3.08189 3.89776C3.1343 3.38775 3.56394 3 4.07665 3H8.53942C9.0611 3 9.49513 3.40104 9.5363 3.92109C9.66467 5.54288 10.1317 7.09764 10.9002 8.50444C11.1427 8.9484 11.0155 9.50354 10.6039 9.79757L9.36556 10.6821ZM6.84425 10.0252L8.7442 8.66809C8.20547 7.50514 7.83628 6.27183 7.64727 5H5.00907C5.00303 5.16632 5 5.333 5 5.5C5 12.9558 11.0442 19 18.5 19C18.667 19 18.8337 18.997 19 18.9909V16.3527C17.7282 16.1637 16.4949 15.7945 15.3319 15.2558L13.9748 17.1558C13.4258 16.9425 12.8956 16.6915 12.3874 16.4061L12.3293 16.373C10.3697 15.2587 8.74134 13.6303 7.627 11.6707L7.59394 11.6126C7.30849 11.1044 7.05754 10.5742 6.84425 10.0252Z"></path></svg>
+        +91 6300-803902
+      </span>
+      <span class="inline-flex items-center gap-2">
+        <svg class="w-4 h-4 text-brand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM20 7.23792L12.0718 14.338L4 7.21594V19H20V7.23792ZM4.51146 5L12.0619 11.662L19.501 5H4.51146Z"></path></svg>
+        enquiry@trishakthibyarg.com
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const name = formData.get('full-name') as string;
+      const email = formData.get('email') as string;
+      const subject = formData.get('subject') as string;
+      const message = formData.get('message') as string;
+      
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      
+      const mailtoLink = `mailto:enquiry@trishakthibyarg.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.location.href = mailtoLink;
+    });
+  }
+</script>

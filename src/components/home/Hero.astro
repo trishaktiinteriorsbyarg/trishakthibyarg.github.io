@@ -1,0 +1,69 @@
+<section class="py-16 sm:py-20">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-16">
+      <div class="flex flex-col items-start gap-8 sm:gap-10">
+        <div class="flex max-w-xl flex-col items-start gap-4 sm:gap-6">
+          <h1 class="text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+            Timeless Interiors, <br class="hidden lg:block" /> Crafted for You.
+          </h1>
+          <p class="text-primary-950/70 dark:text-primary-200/70 text-lg sm:text-xl">
+            Where heritage meets modern living. We curate bespoke spaces in Hyderabad that tell your unique story.
+          </p>
+        </div>
+        <a
+          href="/contact"
+          class="bg-brand hover:bg-opacity-90 dark:focus-visible:outline-primary-400 dark:text-white inline-flex items-center justify-center rounded-full border border-transparent px-5 py-3 text-base font-medium text-white transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        >
+          Transform Your Space
+        </a>
+      </div>
+      <div class="relative w-full rounded-3xl overflow-hidden aspect-video group bg-primary-950">
+        <video
+          id="hero-video"
+          class="h-full w-full object-cover transition-opacity duration-500"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+        >
+          <source src="/assets/WedTS.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-primary-950/10 dark:bg-primary-950/20 pointer-events-none transition duration-500 group-hover:bg-primary-950/20 dark:group-hover:bg-primary-950/30"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initVideo() {
+    const video = document.getElementById('hero-video') as HTMLVideoElement;
+    if (video) {
+        // Hard reset approach: clone and replace the video element to force browser to re-render it
+        if (video.paused && video.currentTime === 0 && !video.ended) {
+            console.log('Video likely needs reset, reloading source...');
+            video.load();
+            video.play().catch(() => {});
+        }
+        
+        // Ensure play is attempted
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+             playPromise.catch((error) => {
+                 console.log("Auto-play prevented:", error);
+                 // Fallback: show muted UI or similar if needed.
+             });
+        }
+    }
+  }
+
+  // Run on initial load
+  initVideo();
+
+  // Run on Astro navigation - Use 'astro:page-load' which fires on initial load and after swaps
+  document.addEventListener('astro:page-load', () => {
+    // Slight delay to ensure DOM is settled
+    setTimeout(initVideo, 100);
+  });
+</script>
