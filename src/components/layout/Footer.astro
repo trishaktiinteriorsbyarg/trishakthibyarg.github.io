@@ -74,7 +74,7 @@ const bottomLinks = [
                       href={link.href}
                       class="focus-visible:outline-primary-950 dark:focus-visible:outline-primary-200 inline-flex items-center gap-1 rounded-md text-base hover:underline focus-visible:outline focus-visible:outline-2"
                       target={link.isExternal ? '_blank' : undefined}
-                      rel={link.isExternal ? 'noopener' : undefined}
+                      rel={link.isExternal ? 'noopener noreferrer' : undefined}
                     >
                       {link.name}
                       {link.isExternal && (

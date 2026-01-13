@@ -25,7 +25,7 @@
           muted
           loop
           playsinline
-          preload="auto"
+          preload="metadata"
         >
           <source src="/assets/WedTS.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -37,33 +37,66 @@
 </section>
 
 <script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function initVideo() {
     const video = document.getElementById('hero-video') as HTMLVideoElement;
-    if (video) {
-        // Hard reset approach: clone and replace the video element to force browser to re-render it
-        if (video.paused && video.currentTime === 0 && !video.ended) {
-            console.log('Video likely needs reset, reloading source...');
-            video.load();
-            video.play().catch(() => {});
-        }
-        
-        // Ensure play is attempted
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-             playPromise.catch((error) => {
-                 console.log("Auto-play prevented:", error);
-                 // Fallback: show muted UI or similar if needed.
-             });
-        }
+    if (!video || video.dataset.initialized === 'true') {
+      return;
+    }
+
+    video.dataset.initialized = 'true';
+    video.muted = true;
+    video.playsInline = true;
+
+    const attemptPlay = () => {
+      if (prefersReducedMotion || !document.contains(video)) {
+        return;
+      }
+
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    };
+
+    if (video.readyState >= 3) {
+      attemptPlay();
+    } else {
+      video.addEventListener('canplay', attemptPlay, { once: true });
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.contains(video)) {
+        return;
+      }
+      if (document.hidden) {
+        video.pause();
+      } else {
+        attemptPlay();
+      }
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+              video.pause();
+              return;
+            }
+            attemptPlay();
+          });
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(video);
     }
   }
 
-  // Run on initial load
   initVideo();
 
-  // Run on Astro navigation - Use 'astro:page-load' which fires on initial load and after swaps
   document.addEventListener('astro:page-load', () => {
-    // Slight delay to ensure DOM is settled
     setTimeout(initVideo, 100);
   });
 </script>
